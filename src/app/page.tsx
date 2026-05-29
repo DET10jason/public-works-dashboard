@@ -528,7 +528,7 @@ function SidebarKpiCards({ kpis }: { kpis: DashboardKpis }) {
 
 function MobileKpiCards({ kpis }: { kpis: DashboardKpis }) {
   return (
-    <div className="grid grid-cols-3 gap-2 lg:hidden">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 lg:hidden">
       <KPICard title="Work Orders" value={kpis.totalWorkOrdersLast7Days} icon={ClipboardList} />
       <KPICard
         title="Alerts"
@@ -1255,7 +1255,7 @@ function AnalyticsView() {
         </p>
       </div>
 
-      <div className="grid shrink-0 grid-cols-2 gap-3 lg:grid-cols-4">
+      <div className="grid shrink-0 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {[
           { label: "Total Assets", value: mockAssets.length },
           { label: "Critical", value: mockAssets.filter((a) => a.status === "Critical").length },
