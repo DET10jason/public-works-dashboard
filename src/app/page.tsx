@@ -986,12 +986,12 @@ const OperationsMapCanvas = dynamic(
 
 function DashboardView({ kpis }: { kpis: DashboardKpis }) {
   return (
-    <div className="grid h-full min-h-0 grid-cols-1 gap-3 lg:gap-4 xl:grid-cols-[minmax(0,7fr)_minmax(220px,3fr)]">
+    <div className="grid h-auto w-full grid-cols-1 gap-4 xl:grid-cols-[minmax(0,7fr)_minmax(220px,3fr)]">
       <div className="h-full min-h-[55vh] min-w-0 xl:min-h-0">
         <OperationsMap />
       </div>
 
-      <aside className="flex min-w-0 flex-col gap-3 xl:max-h-full xl:overflow-y-auto">
+      <aside className="flex min-w-0 flex-col gap-4 w-full h-auto">
         <MobileKpiCards kpis={kpis} />
 
         <div className="min-h-[180px] shrink-0 xl:min-h-[160px] xl:flex-1">
@@ -1124,8 +1124,8 @@ function WorkOrdersView() {
             No records match this filter.
           </div>
         ) : (
-          <div className="overflow-hidden rounded-lg border border-zinc-800/80 bg-zinc-950/50">
-            <table className="w-full min-w-[760px] border-collapse text-left text-sm">
+          <div className="w-full overflow-x-auto">
+            <table className="w-full min-w-[600px] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-zinc-700/80 bg-zinc-900/90 text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
                   <th className="px-5 py-4 lg:px-6">Order ID</th>
