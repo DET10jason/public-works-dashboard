@@ -986,7 +986,7 @@ const OperationsMapCanvas = dynamic(
 
 function DashboardView({ kpis }: { kpis: DashboardKpis }) {
   return (
-    <div className="grid h-auto w-full grid-cols-1 gap-4 xl:grid-cols-[minmax(0,7fr)_minmax(220px,3fr)]">
+    <div className="grid h-auto xl:h-full min-h-0 grid-cols-1 gap-4 xl:grid-cols-[minmax(0,7fr)_minmax(220px,3fr)]">
       <div className="h-full min-h-[55vh] min-w-0 xl:min-h-0">
         <OperationsMap />
       </div>
@@ -1131,8 +1131,8 @@ function WorkOrdersView() {
                   <th className="px-5 py-4 lg:px-6">Order ID</th>
                   <th className="px-5 py-4">Department</th>
                   <th className="px-5 py-4">Status</th>
-                  <th className="hidden px-5 py-4 md:table-cell">Activity Date</th>
-                  <th className="hidden px-5 py-4 lg:table-cell">Location</th>
+                  <th className="px-5 py-4 md:table-cell">Activity Date</th>
+                  <th className="px-5 py-4 lg:table-cell">Location</th>
                   <th className="px-5 py-4 lg:px-6">Description</th>
                 </tr>
               </thead>
