@@ -1128,12 +1128,12 @@ function WorkOrdersView() {
             <table className="w-full min-w-[600px] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-zinc-700/80 bg-zinc-900/90 text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
-                  <th className="px-5 py-4 lg:px-6">Order ID</th>
-                  <th className="px-5 py-4">Department</th>
-                  <th className="px-5 py-4">Status</th>
-                  <th className="px-5 py-4 md:table-cell">Activity Date</th>
-                  <th className="px-5 py-4 lg:table-cell">Location</th>
-                  <th className="px-5 py-4 lg:px-6">Description</th>
+                  <th className="px-5 py-4 min-w-[100px]">Order ID</th>
+                  <th className="px-5 py-4 min-w-[120px]">Department</th>
+                  <th className="px-5 py-4 min-w-[120px]">Status</th>
+                  <th className="px-5 py-4 min-w-[140px]">Activity Date</th>
+                  <th className="px-5 py-4 min-w-[150px]">Location</th>
+                  <th className="px-5 py-4 min-w-[250px]">Description</th>
                 </tr>
               </thead>
               <tbody>
@@ -1144,26 +1144,26 @@ function WorkOrdersView() {
                       index % 2 === 1 ? "bg-zinc-900/25" : "bg-transparent"
                     }`}
                   >
-                    <td className="px-5 py-5 align-middle lg:px-6">
+                    <td className="px-5 py-5 align-middle lg:px-6 whitespace-nowrap">
                       <span className="font-mono text-sm font-bold tracking-wide text-cyan-400 group-hover:text-cyan-300">
                         {order.id}
                       </span>
                     </td>
-                    <td className="px-5 py-5 align-middle">
+                    <td className="px-5 py-5 align-middle whitespace-nowrap">
                       <DepartmentTag type={order.type} />
                     </td>
-                    <td className="px-5 py-5 align-middle">
+                    <td className="px-5 py-5 align-middle whitespace-nowrap">
                       <StatusTag status={order.status} />
                     </td>
-                    <td className="hidden px-5 py-5 align-middle md:table-cell">
+                    <td className="px-5 py-5 align-middle whitespace-nowrap">
                       <span className="text-sm font-medium text-zinc-300">
                         {getWorkOrderDisplayDate(order)}
                       </span>
                     </td>
-                    <td className="hidden px-5 py-5 align-middle font-mono text-xs text-zinc-500 lg:table-cell">
+                    <td className="px-5 py-5 align-middle font-mono text-xs text-zinc-500 whitespace-nowrap">
                       {order.latitude.toFixed(3)}, {order.longitude.toFixed(3)}
                     </td>
-                    <td className="max-w-xs px-5 py-5 align-middle text-sm leading-relaxed text-zinc-300 lg:max-w-md lg:px-6">
+                    <td className="max-w-xs px-5 py-5 align-middle text-sm leading-relaxed text-zinc-300 lg:max-w-md lg:px-6 whitespace-nowrap">
                       {order.description}
                     </td>
                   </tr>
@@ -1563,19 +1563,16 @@ export default function Dashboard() {
         </aside>
 
         {sidebarOpen && (
-          <div className="fixed inset-0 z-40 lg:hidden">
-            <div
-              className="absolute inset-0 bg-zinc-950/80 backdrop-blur-sm"
-              onClick={() => setSidebarOpen(false)}
-            />
-            <aside className="absolute bottom-0 left-0 top-14 w-72 overflow-y-auto border-r border-zinc-800 bg-zinc-900 p-4">
+          <div className="fixed top-14 inset-x-0 bottom-0 z-40 lg:hidden h-[calc(100vh-3.5rem)]">
+            <div className="absolute inset-0 bg-zinc-950/60 backdrop-blur-xs" onClick={() => setSidebarOpen(false)} />
+            <aside className="absolute bottom-0 left-0 top-0 w-72 overflow-y-auto border-r border-zinc-800 bg-zinc-900 p-4">
               <SidebarKpiCards kpis={kpis} />
               <div className="mt-4 border-t border-zinc-800 pt-4">
                 <SidebarNav activeTab={activeTab} onTabChange={handleTabChange} />
               </div>
             </aside>
           </div>
-        )}
+        )} 
 
         <main className="min-w-0 flex-1 p-3 lg:p-4">
           <div className="h-[calc(100vh-3.5rem-1.5rem)] min-h-0 lg:h-[calc(100vh-3.5rem-2rem)]">
