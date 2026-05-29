@@ -24,3 +24,27 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Mapbox popup — dark theme for asset cards */
+.geo-map-shell .mapboxgl-popup-content {
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  padding: 12px 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.geo-map-shell .mapboxgl-popup-tip {
+  border-top-color: #18181b;
+}
+
+.geo-map-shell .mapboxgl-popup-close-button {
+  color: #a1a1aa;
+  font-size: 18px;
+  padding: 4px 8px;
+}
+
+.geo-map-shell .mapboxgl-popup-close-button:hover {
+  color: #f4f4f5;
+  background: transparent;
+}
